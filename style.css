@@ -1,0 +1,98 @@
+/* Core CSS Code. Should only contain base elements */
+html {
+    width: 100%;
+    height: 100%;
+
+    color: white;
+    user-select: none;
+    font-family: Workbench;
+    background-color: #001011;
+}
+
+body {
+    animation: flicker 0.1s infinite;
+}
+
+/* Variables and Data */
+:root {
+    --white: #ffff;
+}
+
+/* Classes and Multiple Elements */
+.flexbox-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Font Families and Handlers */
+@font-face {
+    font-family: Workbench;
+    src: url(assets/Workbench-Regular-VariableFont_BLED\,SCAN.ttf);
+}
+
+/* ID's and Specific Elements */
+#header p {
+    font-size: 35px;
+    padding-left: 20px;
+}
+
+#header img {
+    border-radius: 5px;
+    border: 4px solid white;
+}
+
+#channelLabel {
+    top: -30px;
+    left: 20px;
+    position: fixed;
+
+    color: green;
+    font-size: 50px;
+}
+
+#version {
+    right: 20px;
+    bottom: 0px;
+    position: fixed;
+}
+
+#options-wrapper {
+    padding: 5px 0px;
+    font-size: 20px;
+    text-align: center;
+
+    border-radius: 5px;
+    border: 4px solid white;
+}
+
+/* Keyframes and Animations */
+@keyframes flicker {
+    0% {
+        opacity: 90%;
+    }
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+.option:hover {
+    cursor: pointer;
+    color: lightgreen;
+}
+
+/* Borrowed From http://aleclownes.com/2017/02/01/crt-display.html */
+.crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}

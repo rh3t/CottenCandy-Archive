@@ -6,7 +6,11 @@ html {
     color: white;
     user-select: none;
     font-family: Workbench;
-    background-color: #001011;
+    background-color: #000000;
+}
+
+a {
+    color: white;
 }
 
 body {
@@ -15,7 +19,11 @@ body {
 
 /* Variables and Data */
 :root {
-    --white: #ffff;
+    --amber: rgb(255, 176, 0);
+    --green: rgb(51, 255, 0);
+    --brightergreen: rgb(102, 255, 102);
+
+    --background: rgb(40, 40, 40);
 }
 
 /* Classes and Multiple Elements */
@@ -23,6 +31,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.option {
+    font-size: 25px;
 }
 
 /* Font Families and Handlers */
@@ -33,13 +45,12 @@ body {
 
 /* ID's and Specific Elements */
 #header p {
-    font-size: 35px;
-    padding-left: 20px;
+    font-size: 40px;
+    padding-left: 30px;
 }
 
 #header img {
-    border-radius: 5px;
-    border: 4px solid white;
+    border: 4px dashed white;
 }
 
 #channelLabel {
@@ -47,7 +58,7 @@ body {
     left: 20px;
     position: fixed;
 
-    color: green;
+    color: var(--green);
     font-size: 50px;
 }
 
@@ -55,21 +66,19 @@ body {
     right: 20px;
     bottom: 0px;
     position: fixed;
+
+    font-size: 20px;
 }
 
 #options-wrapper {
-    padding: 5px 0px;
     font-size: 20px;
     text-align: center;
-
-    border-radius: 5px;
-    border: 4px solid white;
 }
 
 /* Keyframes and Animations */
 @keyframes flicker {
     0% {
-        opacity: 93%;
+        opacity: 90%;
     }
     100% {
         opacity: 100%;
@@ -79,7 +88,12 @@ body {
 
 .option:hover {
     cursor: pointer;
-    color: lightgreen;
+    color: var(--brightergreen);
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--brightergreen);
 }
 
 /* Borrowed From http://aleclownes.com/2017/02/01/crt-display.html */
